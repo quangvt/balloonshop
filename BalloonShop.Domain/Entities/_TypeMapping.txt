@@ -1,0 +1,126 @@
+﻿// http://msdn.microsoft.com/en-us/library/cc716729(v=vs.110).aspx
+// http://msdn.microsoft.com/en-us/library/cc716726(v=vs.110).aspx
+/*
+SQL Server Database type    | .NET Framework type
+Bigint                      | Int64
+binary, varbinary           | Byte[]
+Bit                         | Boolean
+date, datetime,
+datetime2, smalldatetime    | DateTime
+Datetimeoffset              | DateTimeOffset
+decimal, money,
+smallmoney, numeric         | Decimal
+float                       | Double
+int                         | Int32
+nchar, nvarchar,, char,
+varchar                     | String
+real                        | Single
+rowversion, timestamp       | Byte[]
+smallint                    | Int16
+time                        | TimeSpan
+tinyint                     | Byte
+uniqueidentifier            | Guid
+*/
+
+1.- Attributes
+2.- Configuration Classes
+3.- The DbModelBuilder API
+-----------------------------------------------
+
+1. Attribute
+[StringLength(1, MinimumLength = 1)]
+[Column(TypeName = "char")] => force the char type
+[MaxLength(30, ErrorMessage = "First name cannot be longer than 30")]
+Data annotations support localization, so we do not need to hardcode the error
+message in English
+
+2 & 3 - Configuraation Classes
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+    /* Sample
+    //modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+
+    // (2nd) Modal Builder: chain multiple methods for a single property together.
+    //   This chaining of methods is called the Fluent API.
+    //            modelBuilder.Entity<Person>().Property(p => p.FirstName)
+    //              .HasMaxLength(30);
+    //            modelBuilder.Entity<Person>().Property(p => p.LastName)
+    //              .HasMaxLength(30);
+    //            modelBuilder.Entity<Person>().Property(p => p.MiddleName)
+    //              .HasMaxLength(1)
+    //              .IsFixedLength()
+    //              .IsUnicode(false);
+
+    // (3rd) Configuration Class
+    //modelBuilder.Configurations.Add(new DepartmentMap());
+    */
+
+    modelBuilder.Configurations.Add(new DepartmentMap());
+}
+
+/* Sample
+// (3rd) Configuration Class: Prefer way to config entity
+//public class DepartmentMap : EntityTypeConfiguration<Department>
+//{
+//    public DepartmentMap()
+//    {
+//        Property(p => p.Name)
+//            .HasMaxLength(10);
+
+// Other:
+// In Entity:
+//   public decimal HeightInFeet { get; set; }
+//   public byte[] Photo { get; set; }
+// In Configuration Class:
+//   Property(p => p.HeightInFeet)
+//      .HasPrecision(4, 2);
+// => decimal(4,2) in db
+//   Property(p => p.Photo)
+//      .IsVariableLength()
+//      .HasMaxLength(4000);
+// => varbinary(4000) in db
+
+// Nullable
+// (1st) Datetime?
+// (2nd) IsOptional in Fluent API
+
+// HasColumnType for notavailable column type
+//   this only using in Class Define (not in Fluent API or Attribute(constant))
+//   HasColumnName, HasColumnOrder
+
+//    HasMany(p =>p.Phones)
+//.WithRequired() => Phone number must has a person
+//.HasForeignKey(ph =>ph.PersonId); => change name of col: Person_PersonId to PersonId
+
+// Many to Many
+//    HasMany(p =>p.Companies)
+//      .WithMany(c =>c.Persons)
+//      .Map(m =>
+//    {
+//        m.MapLeftKey("PesonId");
+//        m.MapRightKey("CompanyId");
+//    });
+
+
+//		}
+//	}
+
+//    public class PersonTypeMap : EntityTypeConfiguration<PersonType>
+//    {
+//          publicPersonTypeMap()
+//        {
+//            HasMany(pt => pt.Persons)
+//            .WithOptional(p => p.PersonType)
+//            .HasForeignKey(p => p.PersonTypeId)
+//            .WillCascadeOnDelete(false);
+//        }
+//    }
+*/
+
+// -------------------------------------------------------------------------------------------------
+ you will not find the configuration API to support such columns. The answer to this problem is to use
+the HasColumnType method on property-configuring classes, and specify the type you
+want to use explicitly by name. If you want to generically support multiple database
+engines, just write a helper class for this purpose that will return the appropriate
+database type as string, based on the currently configured database engine. You
+cannot use this approach for attributes because parameters must be constants.

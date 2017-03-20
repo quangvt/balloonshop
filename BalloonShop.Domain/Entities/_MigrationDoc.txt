@@ -1,0 +1,81 @@
+﻿1. Enable migrations on a project that uses Entity Framework
+2. Use automatic migrations
+3. Create explicit migrations
+4. Add database artifacts, such as indexes
+5. Add migrations to an existing database
+
+--------------------------------------------------------------------------------
+2. Automation Migration
+
+Get-Help Enable-Migrations
+
+Update-Database -script -force (Show script)
+Update-Database -force (not show script)
+// if you need specify project do as below
+Update-Database -projectname MyProjectName -force
+
+--------------------------------------------------------------------------------
+3. Manual Migration
+Add-Migration InitialMigration
+
+PM> Get-Migrations
+Retrieving migrations that have been applied to the target database.
+201508242303096_Bad_Migration
+201508211842590_The_Migration_applied_before_it
+201508211440252_And_another
+
+Update-Database –TargetMigration: <name of last good migration>
+
+PM> Get-Help EntityFramework
+
+-- INDEX ADD --
+public partial class PersonPersonNamesIndex : DbMigration
+{
+public override void Up()
+{
+CreateIndex(
+"People",
+new[] { "LastName", "FirstName" },
+name: "IX_PERSON_NAMES");
+}
+public override void Down()
+{
+DropIndex("People", "IX_PERSON_NAMES");
+}
+}
+
+-- Update --
+PM> Update-Database -TargetMigration "PersonDateAdded"
+
+--------------------------------------------------------------------------------
+5. Add migrations to an existing database
+a. Generate the changes script
+b. Use migrate.exe
+c. Use the migrating initializer
+
+a. by script
+PM> Update-Database -Script
+
+b. migrate.exe
+migrate.exe Chapter7.VB.data [*the assembly containing our context and migrations*]
+/connectionString="Data Source=.;Initial Catalog=Chapter7;Integrated Security=SSPI"
+/connectionProviderName="System.Data.SqlClient"
+/startupConfigurationFile=Chapter7.VB.exe.config
+
+c. Applying migrations via an initializer
+public class Initializer :
+MigrateDatabaseToLatestVersion<Context, Configuration>
+{ 
+	// InitializeDatabase method
+}
+
+****
+Adding migrations to an existing database
+Add-Migration commandlet: –IgnoreChanges
+When we issue this command, Entity Framework will create an empty migration.
+It will assume that your model defined by context and entities are compatible with
+our database. Once you update the database by running this migration, no schema
+changes will take place, but a new row will be added to the _MigrationHistory table
+for this initial migration. Once this is accomplished, we can safely switch to the Entity
+Framework migration API to maintain schema changes from that point on
+[* This is a creation of initial migration *]

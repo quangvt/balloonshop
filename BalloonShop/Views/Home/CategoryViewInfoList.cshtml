@@ -1,0 +1,16 @@
+﻿@using BalloonShop.Domain.Entities;
+@model IEnumerable<CategoryViewInfo>
+
+<div>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-md-1">@item.CategoryId</div>
+                <div class="col-md-2">@item.Name</div>
+                <div class="col-md-2">@item.DateAdded</div>
+            </div>
+        }
+    }
+</div>

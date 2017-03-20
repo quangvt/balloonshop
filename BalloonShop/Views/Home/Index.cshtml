@@ -1,0 +1,17 @@
+﻿@using BalloonShop.Domain.Entities;
+@model IEnumerable<Department>
+
+<div> 
+    @if (Model != null)
+    {
+        foreach (var dept in Model)
+        {
+            <div class="row">
+                <div class="col-md-1">@dept.DepartmentId</div>
+                <div class="col-md-2">@dept.Name</div>
+                <div class="col-md-9">@dept.Description</div>
+            </div>
+        }
+    }
+</div>
+
