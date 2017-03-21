@@ -149,6 +149,9 @@
     <Compile Include="Migrations\201703152029226_Switch01.Designer.cs">
       <DependentUpon>201703152029226_Switch01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Attributes\FutureDateAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\MustBeTrueAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\NoJoeOnMondaysAttribute.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
