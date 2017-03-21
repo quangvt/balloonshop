@@ -8,6 +8,10 @@ namespace BalloonShop.Domain.Entities
         [HiddenInput(DisplayValue = false)]
         public int ProductId { get; set; }
 
+        // Remote validate: execute in the first time submit
+        //  and each time user edit later. So need to consider
+        //  to apply this validation type
+        [Remote("ValidateName", "Product")]
         public string Name { get; set; }
 
         [DataType(DataType.MultilineText)]

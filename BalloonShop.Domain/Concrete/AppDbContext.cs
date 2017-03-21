@@ -91,6 +91,9 @@ namespace BalloonShop.Domain.Concrete
     }
 
     // (2nd Method) Custom Convention
+    /// <summary>
+    /// Global Conventions
+    /// </summary>
     class AppConvention : Convention
     {
         public AppConvention()

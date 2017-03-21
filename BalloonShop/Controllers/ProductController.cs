@@ -1,8 +1,6 @@
 ﻿using BalloonShop.Domain.Abstract;
 using BalloonShop.Domain.Entities;
 using BalloonShop.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,11 +14,6 @@ namespace BalloonShop.Controllers
         public ProductController(IProductRepository repo)
         {
             repository = repo;
-        }
-
-        public ActionResult Index()
-        {
-            return View(repository.Products);
         }
 
         public ViewResult List(string category, int page = 1)
@@ -46,16 +39,10 @@ namespace BalloonShop.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Delete(int ProductId)
+        [Authorize]
+        public ActionResult Index()
         {
-            Product deletedProduct = repository.Delete(ProductId);
-            if (deletedProduct != null)
-            {
-                TempData["message"] = string.Format("{0} was deleted.",
-                    deletedProduct.Name);
-            }
-            return RedirectToAction("Index");
+            return View(repository.Products);
         }
 
         public ActionResult Create()
@@ -73,6 +60,12 @@ namespace BalloonShop.Controllers
         [HttpPost]
         public ActionResult Edit(Product inObj, HttpPostedFileBase image = null)
         {
+            //if (checked somecondition)
+            //{
+            //    ModelState.AddModelError("FieldName", "Invalid data in FieldName."); // => Property-level error
+            //    ModelState.AddModelError("", "Joe cannot book appointments on Mondays"); // => Model-level error
+            //}
+
             if (ModelState.IsValid)
             {
                 if (image != null)
@@ -102,6 +95,18 @@ namespace BalloonShop.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult Delete(int ProductId)
+        {
+            Product deletedProduct = repository.Delete(ProductId);
+            if (deletedProduct != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted.",
+                    deletedProduct.Name);
+            }
+            return RedirectToAction("Index");
+        }
+
         public FileContentResult GetImage(int productId)
         {
             Product obj = repository.Products
@@ -113,6 +118,25 @@ namespace BalloonShop.Controllers
             else
             {
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// Remote validation: Sample
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public JsonResult ValidateName(string Name)
+        {
+            if(Name == "Phantom")
+            {
+                // JsonRequestBehavior.AllowGet: This is because the 
+                //   MVC Framework disallows GET requests that produce JSON by default,
+                return Json("Sorry, this name is not allow!",
+                    JsonRequestBehavior.AllowGet);
+            } else
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
             }
         }
     }
