@@ -50,6 +50,7 @@ namespace BalloonShop.Infrastructure
             // 2. Binding to EF
             _kernel.Bind<IDepartmentRepository>().To<EFDepartmentRepository>();
             _kernel.Bind<IProductRepository>().To<EFProductRepository>();
+            //_kernel.Bind<IProductRepository>().To<EFProductSPRepository>();
 
             // 3. Binding OrderProcessing
             EmailSettings emailSettings = new EmailSettings

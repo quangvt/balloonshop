@@ -168,7 +168,25 @@ namespace BalloonShop.Domain.Concrete
     {
         public ProductMap()
         {
-            Property(p => p.Name)
+            // Apply DML by Store Procedure
+            MapToStoredProcedures();
+            //MapToStoredProcedures(config =>
+            //{
+            //    config.Delete(
+            //        procConfig =>
+            //        {
+            //            procConfig.HasName("CompanyDelete");
+            //            procConfig.Parameter(company =>
+            //                company.CompanyId, "companyId");
+            //        });
+            //    config.Insert(procConfig =>
+            //        procConfig.HasName("CompanyInsert"));
+            //    config.Update(procConfig =>
+            //        procConfig.HasName("CompanyUpdate"));
+            //});
+        
+
+                Property(p => p.Name)
                 .IsRequired();
             Property(p => p.Description)
                 .IsRequired();

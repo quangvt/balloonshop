@@ -5,7 +5,6 @@ C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\EntityFramework.dll
 C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\EntityFramework.SqlServer.dll
 C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\EntityFramework.xml
 C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\EntityFramework.SqlServer.xml
-C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.csprojResolveAssemblyReference.cache
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.dll
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.pdb
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.InitialCreate.resources
@@ -35,3 +34,4 @@ C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\System.Web.WebPages.Razor.xm
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.AddProduct.resources
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.AddProduct2.resources
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.Switch01.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.UseStoreProcedure.resources

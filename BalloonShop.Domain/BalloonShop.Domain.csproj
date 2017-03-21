@@ -84,6 +84,7 @@
     <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Concrete\AppDbContext.cs" />
+    <Compile Include="Concrete\EFProductSPRepository.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EFDepartmentRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
@@ -152,6 +153,10 @@
     <Compile Include="Infrastructure\Attributes\FutureDateAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\MustBeTrueAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\NoJoeOnMondaysAttribute.cs" />
+    <Compile Include="Migrations\201703211806076_UseStoreProcedure.cs" />
+    <Compile Include="Migrations\201703211806076_UseStoreProcedure.Designer.cs">
+      <DependentUpon>201703211806076_UseStoreProcedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703152029226_Switch01.resx">
       <DependentUpon>201703152029226_Switch01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211806076_UseStoreProcedure.resx">
+      <DependentUpon>201703211806076_UseStoreProcedure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
