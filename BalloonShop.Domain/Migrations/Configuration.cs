@@ -13,6 +13,10 @@ namespace BalloonShop.Domain.Migrations
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "BalloonShop.Domain.Concrete.AppDbContext";
+
+            // Dedicate for MySQL Database
+            //SetSqlGenerator("MySql.Data.MySqlClient", 
+            //    new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(AppDbContext context)

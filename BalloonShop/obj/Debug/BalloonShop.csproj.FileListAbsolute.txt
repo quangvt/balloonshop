@@ -57,3 +57,5 @@ C:\Working\BalloonShop\BalloonShop\bin\WebActivatorEx.dll
 C:\Working\BalloonShop\BalloonShop\bin\Ninject.xml
 C:\Working\BalloonShop\BalloonShop\bin\Ninject.Web.Common.xml
 C:\Working\BalloonShop\BalloonShop\bin\Ninject.Web.Mvc.xml
+C:\Working\BalloonShop\BalloonShop\bin\MySql.Data.dll
+C:\Working\BalloonShop\BalloonShop\bin\MySql.Data.Entity.EF6.dll
