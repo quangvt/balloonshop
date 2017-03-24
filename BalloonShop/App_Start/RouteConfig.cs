@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace BalloonShop
@@ -26,6 +27,13 @@ namespace BalloonShop
         {
             // TODO: Ignore for resource ?
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            // Handler Register By Route Configuration: Solution 1
+            //routes.Add(new Route("handler/{*path}",
+            //    new CustomRouteHandler { HandlerType = 
+            //        typeof(Infrastructure.Handler.DayOfWeekHandler) }));
+            // Handler Register By Web Config: Solution 2
+            routes.IgnoreRoute("handler/{*path}");
 
             routes.MapRoute(
                 null, // name
@@ -76,6 +84,15 @@ namespace BalloonShop
             );
 
             routes.MapRoute(null, "{controller}/{action}");
+        }
+
+        class CustomRouteHandler : IRouteHandler
+        {
+            public Type HandlerType { get; set; }
+            public System.Web.IHttpHandler GetHttpHandler(RequestContext requestContext)
+            {
+                return (System.Web.IHttpHandler)Activator.CreateInstance(HandlerType);
+            }
         }
     }
 }
