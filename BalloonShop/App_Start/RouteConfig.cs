@@ -16,44 +16,52 @@ namespace BalloonShop
         //    );
         //}
 
+        /// <summary>
+        /// Link Factory.
+        /// <!-- Friendly to search engine, with customer viewing -->
+        /// <!-- Certain pages need HTTPS accessibility -->
+        /// </summary>
+        /// <param name="routes"></param>
         public static void RegisterRoutes(RouteCollection routes)
         {
             // TODO: Ignore for resource ?
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                null,
-                "",
+                null, // name
+                "",   // url
                 new
                 {
                     controller = "Product",
                     action = "List",
                     category = (string)null,
                     page = 1
-                }
+                }    // default
             );
 
             routes.MapRoute(
-                null,
-                "Page{page}",
+                null, // name
+                "Page{page}", // url
                 new
                 {
                     controller = "Product",
                     action = "List",
                     category = (string)null
-                },
-                new { page = @"\d+" }
+                }, // default
+                new { page = @"\d+" } // constrain
             );
 
+            // Note: consider to ordering
+            //   this map will be used after check abow route
             routes.MapRoute(
-                null,
-                "{category}",
+                null, // name
+                "{category}", // url
                 new
                 {
                     controller = "Product",
                     action = "List",
                     page = 1
-                }
+                } // default
             );
 
             routes.MapRoute(
