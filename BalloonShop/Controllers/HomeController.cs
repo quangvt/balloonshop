@@ -21,6 +21,7 @@ namespace BalloonShop.Controllers
             //    //List<Department> depts = context.Department.ToList();
             //    //if (depts.Count > 0) return View(depts);
             //}
+            throw new Exception("haloha");
             return View((object)null);
         }
 
@@ -126,5 +127,11 @@ namespace BalloonShop.Controllers
             return result;
         }
         #endregion Trace
+
+        public ActionResult Error()
+        {
+            return View();
+        }
+        
     }
 }

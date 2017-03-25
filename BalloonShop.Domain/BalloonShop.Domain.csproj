@@ -95,8 +95,6 @@
     <Compile Include="Abstract\IDepartmentRepository.cs" />
     <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
-    <Compile Include="Common\BalloonShopConfiguration.cs" />
-    <Compile Include="Common\Utilities.cs" />
     <Compile Include="Concrete\AppDbContext.cs" />
     <Compile Include="Concrete\SqlServerDbProvider.cs" />
     <Compile Include="Concrete\SqlServerDbProviderFactory.cs" />

@@ -57,6 +57,12 @@ namespace BalloonShop
             ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
 
+        void Application_Error(Object sender, EventArgs e)
+        {
+            // Log all unhandled errors
+            Common.Utilities.LogError(Server.GetLastError());
+        }
+
         // Request Life Cycle
         private void RecordEvent(object src, EventArgs args)
         {

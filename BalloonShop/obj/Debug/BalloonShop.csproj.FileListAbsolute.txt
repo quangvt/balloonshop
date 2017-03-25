@@ -62,3 +62,5 @@ C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.pdb
 C:\Working\BalloonShop\BalloonShop\bin\Glimpse.AspNet.dll
 C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Core.dll
 C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Mvc5.dll
+C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.dll
+C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.pdb

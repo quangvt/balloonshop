@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonShop.Domain", "Ballo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModules", "CommonModules\CommonModules.csproj", "{69F30F58-ECA3-4E13-A367-309F95BFB231}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonShop.Common", "BalloonShop.Common\BalloonShop.Common.csproj", "{BFC7A395-D8DC-400F-A267-86EF69F17490}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{69F30F58-ECA3-4E13-A367-309F95BFB231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F30F58-ECA3-4E13-A367-309F95BFB231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F30F58-ECA3-4E13-A367-309F95BFB231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,36 +1,36 @@
 ﻿using System.Configuration;
 
-namespace BalloonShop.Domain.Common
+namespace BalloonShop.Common
 {
-    public class BalloonShopConfiguration
+    public class Configuration
     {
-        // Caches the connection string
-        private static string dbConnectionString;
-        // Caches the data provider name
-        private static string dbProviderName;
-        static BalloonShopConfiguration()
-        {
-            dbConnectionString = ConfigurationManager.ConnectionStrings
-                            ["BalloonShopConnection"].ConnectionString;
-            dbProviderName = ConfigurationManager.ConnectionStrings
-                            ["BalloonShopConnection"].ProviderName;
-        }
-        // Returns the connection string for the BalloonShop database
-        public static string DbConnectionString
-        {
-            get
-            {
-                return dbConnectionString;
-            }
-        }
-        // Returns the data provider name
-        public static string DbProviderName
-        {
-            get
-            {
-                return dbProviderName;
-            }
-        }
+        //// Caches the connection string
+        //private static string dbConnectionString;
+        //// Caches the data provider name
+        //private static string dbProviderName;
+        //static Configuration()
+        //{
+        //    dbConnectionString = ConfigurationManager.ConnectionStrings
+        //                    ["balloonshop"].ConnectionString;
+        //    dbProviderName = ConfigurationManager.ConnectionStrings
+        //                    ["balloonshop"].ProviderName;
+        //}
+        //// Returns the connection string for the BalloonShop database
+        //public static string DbConnectionString
+        //{
+        //    get
+        //    {
+        //        return dbConnectionString;
+        //    }
+        //}
+        //// Returns the data provider name
+        //public static string DbProviderName
+        //{
+        //    get
+        //    {
+        //        return dbProviderName;
+        //    }
+        //}
 
         // Returns the address of the mail server
         public static string MailServer

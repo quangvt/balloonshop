@@ -274,6 +274,7 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Home\Modules.cshtml" />
     <Content Include="Views\Home\IndexTrace.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -286,6 +287,10 @@
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BalloonShop.Common\BalloonShop.Common.csproj">
+      <Project>{bfc7a395-d8dc-400f-a267-86ef69f17490}</Project>
+      <Name>BalloonShop.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BalloonShop.Domain\BalloonShop.Domain.csproj">
       <Project>{07d80dc8-7ffd-4040-8cf3-4e85e3300c15}</Project>
       <Name>BalloonShop.Domain</Name>
