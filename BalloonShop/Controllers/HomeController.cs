@@ -109,5 +109,22 @@ namespace BalloonShop.Controllers
                 };
         }
         #endregion Test Module
+
+        #region Trace
+        private Dictionary<string, string> progs = new Dictionary<string, string> {
+            { "A", "AlanSmith" },
+            { "B", "Bonano" },
+            { "C", "Cristian" }
+            };
+        public ActionResult IndexTrace()
+        {
+            HttpContext.Trace.Write("HomeController", "Index Method Started");
+            HttpContext.Trace.Write("HomeController",
+                string.Format("There are {0} programmers", progs.Keys.Count));
+            ActionResult result = View(progs);
+            HttpContext.Trace.Write("HomeController", "Index Trace Method Completed");
+            return result;
+        }
+        #endregion Trace
     }
 }

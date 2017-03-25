@@ -59,3 +59,6 @@ C:\Working\BalloonShop\BalloonShop\bin\System.Web.Mvc.xml
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.csprojResolveAssemblyReference.cache
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.dll
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.pdb
+C:\Working\BalloonShop\BalloonShop\bin\Glimpse.AspNet.dll
+C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Core.dll
+C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Mvc5.dll

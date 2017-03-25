@@ -1,0 +1,22 @@
+﻿@model Dictionary<string, string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexTrace</title>
+</head>
+<body>
+    <div> 
+        @foreach(var i in Model.Keys)
+        {
+            <div>Model[i]</div>
+            
+        }
+    </div>
+</body>
+</html>
