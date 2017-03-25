@@ -8,18 +8,18 @@ using BalloonShop.Domain.Entities;
 
 namespace BalloonShop.Domain.Concrete
 {
-    public class EFDepartmentRepository : IDepartmentRepository
+    public class EFDepartmentRepository : IRepository<Department>
     {
         AppDbContext context = new AppDbContext();
 
-        public IEnumerable<Department> Departments
+        public IEnumerable<Department> list
         {
             get { return context.Department; }
         }
 
-        public Department Delete(int departmentId)
+        public Department Delete(int id)
         {
-            Department dbEntry = context.Department.Find(departmentId);
+            Department dbEntry = context.Department.Find(id);
             if (dbEntry != null)
             {
                 context.Department.Remove(dbEntry);
@@ -28,19 +28,19 @@ namespace BalloonShop.Domain.Concrete
             return dbEntry;
         }
 
-        public void Save(Department dept)
+        public void Save(Department item)
         {
-            if(dept.DepartmentId == 0)
+            if(item.DepartmentId == 0)
             {
-                context.Department.Add(dept);
+                context.Department.Add(item);
             }
             else
             {
-                Department dbEntry = context.Department.Find(dept.DepartmentId);
+                Department dbEntry = context.Department.Find(item.DepartmentId);
                 if (dbEntry != null)
                 {
-                    dbEntry.Name = dept.Name;
-                    dbEntry.Description = dept.Description;
+                    dbEntry.Name = item.Name;
+                    dbEntry.Description = item.Description;
                 }
             }
             context.SaveChanges();

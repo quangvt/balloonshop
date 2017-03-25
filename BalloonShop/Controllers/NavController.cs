@@ -1,4 +1,5 @@
 ﻿using BalloonShop.Domain.Abstract;
+using BalloonShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,18 @@ namespace BalloonShop.Controllers
 {
     public class NavController : Controller
     {
-        private IProductRepository repository;
+        private IRepository<Product> _repository;
 
-        public NavController(IProductRepository repo)
+        public NavController(IRepository<Product> repo)
         {
-            repository = repo;
+            _repository = repo;
         }
 
         public PartialViewResult Menu(string category = null)
         {
             ViewBag.SelectedCategory = category;
             IEnumerable<string> categories =
-                repository.Products.Select(x => x.Category)
+                _repository.list.Select(x => x.Category)
                     .Distinct()
                     .OrderBy(x => x);
             return PartialView("FlexMenu", categories); 

@@ -8,10 +8,10 @@ namespace BalloonShop.Controllers
 {
     public class CartController : Controller
     {
-        private IProductRepository repository;
+        private IRepository<Product> repository;
         private IOrderProcessor orderProcessor;
 
-        public CartController(IProductRepository repo, IOrderProcessor proc)
+        public CartController(IRepository<Product> repo, IOrderProcessor proc)
         {
             repository = repo;
             orderProcessor = proc;
@@ -28,7 +28,7 @@ namespace BalloonShop.Controllers
 
         public RedirectToRouteResult AddToCart(Cart cart, int productId, string returnUrl)
         {
-            Product product = repository.Products
+            Product product = repository.list
                 .FirstOrDefault(p => p.ProductId == productId);
             if(product != null)
             {
@@ -39,7 +39,7 @@ namespace BalloonShop.Controllers
 
         public RedirectToRouteResult RemoveFromCart (Cart cart, int productId, string returnUrl)
         {
-            Product product = repository.Products
+            Product product = repository.list
                 .FirstOrDefault(p => p.ProductId == productId);
             if(product != null)
             {

@@ -92,10 +92,13 @@
     <Compile Include="Abstract\IDbContext.cs" />
     <Compile Include="Abstract\IDbProvider.cs" />
     <Compile Include="Abstract\IDbProviderFactory.cs" />
+    <Compile Include="Abstract\ICategoryRepository.cs" />
     <Compile Include="Abstract\IDepartmentRepository.cs" />
     <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\AppDbContext.cs" />
+    <Compile Include="Concrete\EFCategoryRepository.cs" />
     <Compile Include="Concrete\SqlServerDbProvider.cs" />
     <Compile Include="Concrete\SqlServerDbProviderFactory.cs" />
     <Compile Include="Concrete\EFProductSPRepository.cs" />
@@ -175,6 +178,30 @@
     <Compile Include="Migrations\201703220754304_AddStoreProcedureMySQL.Designer.cs">
       <DependentUpon>201703220754304_AddStoreProcedureMySQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703251813204_AddCategory.cs" />
+    <Compile Include="Migrations\201703251813204_AddCategory.Designer.cs">
+      <DependentUpon>201703251813204_AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251858198_UpdateCategory1.cs" />
+    <Compile Include="Migrations\201703251858198_UpdateCategory1.Designer.cs">
+      <DependentUpon>201703251858198_UpdateCategory1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251900572_UpdateCategory2.cs" />
+    <Compile Include="Migrations\201703251900572_UpdateCategory2.Designer.cs">
+      <DependentUpon>201703251900572_UpdateCategory2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251902001_UpdateCategory3.cs" />
+    <Compile Include="Migrations\201703251902001_UpdateCategory3.Designer.cs">
+      <DependentUpon>201703251902001_UpdateCategory3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251909258_UpdateCategory4.cs" />
+    <Compile Include="Migrations\201703251909258_UpdateCategory4.Designer.cs">
+      <DependentUpon>201703251909258_UpdateCategory4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251911095_UpdateCategory5.cs" />
+    <Compile Include="Migrations\201703251911095_UpdateCategory5.Designer.cs">
+      <DependentUpon>201703251911095_UpdateCategory5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Web\HttpContext.cs" />
@@ -233,6 +260,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703220754304_AddStoreProcedureMySQL.resx">
       <DependentUpon>201703220754304_AddStoreProcedureMySQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251813204_AddCategory.resx">
+      <DependentUpon>201703251813204_AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251858198_UpdateCategory1.resx">
+      <DependentUpon>201703251858198_UpdateCategory1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251900572_UpdateCategory2.resx">
+      <DependentUpon>201703251900572_UpdateCategory2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251902001_UpdateCategory3.resx">
+      <DependentUpon>201703251902001_UpdateCategory3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251909258_UpdateCategory4.resx">
+      <DependentUpon>201703251909258_UpdateCategory4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251911095_UpdateCategory5.resx">
+      <DependentUpon>201703251911095_UpdateCategory5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

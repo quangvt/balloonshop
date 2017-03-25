@@ -5,8 +5,8 @@ namespace BalloonShop.Domain.Abstract
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> Products { get; }
-        void Save(Product dept);
-        Product Delete(int productId);
+        IEnumerable<Product> list { get; }
+        void Save(Product item);
+        Product Delete(int id);
     }
 }

@@ -9,18 +9,18 @@ namespace BalloonShop.Controllers
 {
     public class ProductController : Controller
     {
-        private IProductRepository repository;
+        private IRepository<Product> _repository;
         public int PageSize = 4;
-        public ProductController(IProductRepository repo)
+        public ProductController(IRepository<Product> repo)
         {
-            repository = repo;
+            _repository = repo;
         }
 
         public ViewResult List(string category, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
             {
-                Products = repository.Products
+                Products = _repository.list
                     .Where(p => category == null ||
                         p.Category == category)
                     .OrderBy(p => p.ProductId)
@@ -30,8 +30,8 @@ namespace BalloonShop.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = (category == null) ? repository.Products.Count()
-                                    : repository.Products.Where(e => e.Category == category).Count()
+                    TotalItems = (category == null) ? _repository.list.Count()
+                                    : _repository.list.Where(e => e.Category == category).Count()
                 },
                 CurrentCategory = category
             };
@@ -42,7 +42,7 @@ namespace BalloonShop.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View(repository.Products);
+            return View(_repository.list);
         }
 
         public ActionResult Create()
@@ -52,7 +52,7 @@ namespace BalloonShop.Controllers
 
         public ActionResult Edit(int ProductId)
         {
-            Product obj = repository.Products
+            Product obj = _repository.list
                 .FirstOrDefault(p => p.ProductId == ProductId);
             return View(obj);
         }
@@ -75,7 +75,7 @@ namespace BalloonShop.Controllers
                     image.InputStream.Read(inObj.ImageData, 0, image.ContentLength);
                 }
 
-                repository.Save(inObj);
+                _repository.Save(inObj);
                 /** Tip
                 //The key difference from session data is
                 //  that temp data is deleted at the end of the HTTP request.
@@ -98,7 +98,7 @@ namespace BalloonShop.Controllers
         [HttpPost]
         public ActionResult Delete(int ProductId)
         {
-            Product deletedProduct = repository.Delete(ProductId);
+            Product deletedProduct = _repository.Delete(ProductId);
             if (deletedProduct != null)
             {
                 TempData["message"] = string.Format("{0} was deleted.",
@@ -109,7 +109,7 @@ namespace BalloonShop.Controllers
 
         public FileContentResult GetImage(int productId)
         {
-            Product obj = repository.Products
+            Product obj = _repository.list
                 .FirstOrDefault(p => p.ProductId == productId);
             if (obj != null)
             {

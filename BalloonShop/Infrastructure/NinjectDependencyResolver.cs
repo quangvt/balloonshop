@@ -1,5 +1,6 @@
 ﻿using BalloonShop.Domain.Abstract;
 using BalloonShop.Domain.Concrete;
+using BalloonShop.Domain.Entities;
 using BalloonShop.Infrastructure.Abstract;
 using BalloonShop.Infrastructure.Concrete;
 using Ninject;
@@ -48,8 +49,13 @@ namespace BalloonShop.Infrastructure
             //kernel.Bind<IProductRepository>().ToConstant(mock.Object);
 
             // 2. Binding to EF
-            _kernel.Bind<IDepartmentRepository>().To<EFDepartmentRepository>();
-            _kernel.Bind<IProductRepository>().To<EFProductRepository>();
+
+            //_kernel.Bind<IDepartmentRepository>().To<EFDepartmentRepository>();
+            //_kernel.Bind<IProductRepository>().To<EFProductRepository>();
+            _kernel.Bind<IRepository<Department>>().To<EFDepartmentRepository>();
+            _kernel.Bind<IRepository<Category>>().To<EFCategoryRepository>();
+            _kernel.Bind<IRepository<Product>>().To<EFProductRepository>();
+
             //_kernel.Bind<IProductRepository>().To<EFProductSPRepository>();
 
             // 3. Binding OrderProcessing

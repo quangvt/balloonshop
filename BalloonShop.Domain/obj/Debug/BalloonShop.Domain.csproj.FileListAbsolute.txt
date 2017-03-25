@@ -39,3 +39,9 @@ C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migration
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.csproj.GenerateResource.Cache
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.dll
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.pdb
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.AddCategory.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.UpdateCategory1.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.UpdateCategory2.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.UpdateCategory3.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.UpdateCategory4.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.UpdateCategory5.resources

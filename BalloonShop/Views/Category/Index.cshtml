@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BalloonShop.Domain.Entities.Category>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "All Categories";
+}
+
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        <h3>All Categories</h3>
+    </div>
+    <div class="panel panel-body">
+        <table class="table table-bordered table-hover">
+            @if (Model != null)
+            {
+                <tr>
+                    <th>Id</th>
+                    <th>Deparment</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th></th>
+                </tr>
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="col-sm-1">@item.CategoryId</td>
+                        @*Todo: Error if item.Department => Lazy Loading*@
+                        <td class="col-sm-2">@item.DepartmentId</td>
+                        <td class="col-sm-2">
+                            @Html.ActionLink(@item.Name, "Edit", new { @item.CategoryId })
+                        </td>
+                        <td class="col-sm-3">@item.Description</td>
+                        <td class="col-sm-2">@item.DateAdded</td>
+                        <td class="cold-sm-2">
+                            @using (Html.BeginForm("Delete", "Category"))
+                            {
+                                @Html.Hidden("CategoryId", @item.CategoryId)
+                                <input type="submit"
+                                        class="btn btn-default btn-xs"
+                                        value="Delete" />
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <div class="panel panel-footer">
+        @Html.ActionLink("Add New", "Create", null,
+            new { @class = "btn btn-default" })
+    </div>
+</div>

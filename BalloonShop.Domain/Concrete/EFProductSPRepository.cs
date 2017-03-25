@@ -13,7 +13,7 @@ namespace BalloonShop.Domain.Concrete
     {
         AppDbContext context = new AppDbContext();
 
-        public IEnumerable<Product> Products
+        public IEnumerable<Product> list
         {
             get
             {
@@ -26,12 +26,12 @@ namespace BalloonShop.Domain.Concrete
             }
         }
 
-        public Product Delete(int productId)
+        public Product Delete(int id)
         {
             return null;
         }
 
-        public void Save(Product inObj)
+        public void Save(Product item)
         {
             // ...
         }

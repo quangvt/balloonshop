@@ -9,5 +9,7 @@ namespace BalloonShop.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime DateAdded { get; set; }
+
+        public virtual Department Department { get; set; }
     }
 }

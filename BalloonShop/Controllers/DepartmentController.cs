@@ -9,25 +9,25 @@ namespace BalloonShop.Controllers
 {
     public class DepartmentController : Controller
     {
-        private IDepartmentRepository repository;
-        public DepartmentController(IDepartmentRepository repo)
+        private IRepository<Department> _repository;
+        public DepartmentController(IRepository<Department> repo)
         {
-            repository = repo;
+            _repository = repo;
         }
 
         public ActionResult Index()
         {
-            return View(repository.Departments);
+            return View(_repository.list);
         }
 
         [HttpPost]
         public ActionResult Delete(int DepartmentId)
         {
-            Department deletedDepartment = repository.Delete(DepartmentId);
-            if (deletedDepartment != null)
+            Department item = _repository.Delete(DepartmentId);
+            if (item != null)
             {
                 TempData["message"] = string.Format("{0} was deleted.",
-                    deletedDepartment.Name);
+                    item.Name);
             }
             return RedirectToAction("Index");
         }
@@ -39,17 +39,17 @@ namespace BalloonShop.Controllers
 
         public ActionResult Edit(int DepartmentId)
         {
-            Department obj = repository.Departments
+            Department obj = _repository.list
                 .FirstOrDefault(p => p.DepartmentId == DepartmentId);
             return View(obj);
         }
 
         [HttpPost]
-        public ActionResult Edit(Department inObj)
+        public ActionResult Edit(Department item)
         {
             if(ModelState.IsValid)
             {
-                repository.Save(inObj);
+                _repository.Save(item);
                 /** Tip
                 //The key difference from session data is
                 //  that temp data is deleted at the end of the HTTP request.
@@ -59,12 +59,12 @@ namespace BalloonShop.Controllers
                 //I could have used the session data feature, but then the message would be persistent until
                 //  I explicitly removed it, which I would rather not have to do
                 **/
-                TempData["message"] = string.Format("{0} has been save.", inObj.Name);
+                TempData["message"] = string.Format("{0} has been save.", item.Name);
                 return RedirectToAction("Index");
             } else
             {
                 // there is something wrong with the data values
-                return View(inObj);
+                return View(item);
             }
         }
 

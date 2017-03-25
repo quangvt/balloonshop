@@ -1,0 +1,47 @@
+﻿@model BalloonShop.Domain.Entities.Category
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.Name</h3>
+    </div>
+    @using (Html.BeginForm("Edit", "Category"))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.CategoryId)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "CategoryId":
+                    case "Department":
+                        // do not display
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "Description")
+                            {
+                                @Html.TextArea(property.PropertyName, null,
+                                new { @class = "form-control", rows = 5 })
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null,
+                                new { @class = "form-control" })
+                            }
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+                }
+            }
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Back to List", "Index", null, 
+                new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

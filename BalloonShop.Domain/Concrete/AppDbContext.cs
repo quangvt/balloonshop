@@ -119,9 +119,9 @@ namespace BalloonShop.Domain.Concrete
             Property(p => p.Description)
                 .HasMaxLength(500);
             //Property(p => p.Categories) // Error
-            HasMany(p => p.Categories)
-                .WithRequired()
-                .HasForeignKey(ph => ph.DepartmentId);
+            //HasMany(p => p.Categories)
+            //    .WithRequired()
+            //    .HasForeignKey(ph => ph.DepartmentId);
         }
     }
 
@@ -136,6 +136,13 @@ namespace BalloonShop.Domain.Concrete
                 .HasMaxLength(30);
             Property(p => p.Description)
                 .HasMaxLength(500);
+            //Property(p => p.DepartmentId)
+            //    .IsRequired();
+            Property(p => p.DateAdded)
+                .IsRequired();
+            //Property(p => p.DepartmentId)
+            //    .HasColumnName("DepartmentId");
+
         }
     }
 

@@ -4,18 +4,18 @@ using BalloonShop.Domain.Entities;
 
 namespace BalloonShop.Domain.Concrete
 {
-    public class EFProductRepository : IProductRepository
+    public class EFProductRepository : IRepository<Product>
     {
         AppDbContext context = new AppDbContext();
 
-        public IEnumerable<Product> Products
+        public IEnumerable<Product> list
         {
             get { return context.Product; }
         }
 
-        public Product Delete(int productId)
+        public Product Delete(int id)
         {
-            Product dbEntry = context.Product.Find(productId);
+            Product dbEntry = context.Product.Find(id);
             if (dbEntry != null)
             {
                 context.Product.Remove(dbEntry);
@@ -24,23 +24,23 @@ namespace BalloonShop.Domain.Concrete
             return dbEntry;
         }
 
-        public void Save(Product inObj)
+        public void Save(Product item)
         {
-            if(inObj.ProductId == 0)
+            if(item.ProductId == 0)
             {
-                context.Product.Add(inObj);
+                context.Product.Add(item);
             }
             else
             {
-                Product dbEntry = context.Product.Find(inObj.ProductId);
+                Product dbEntry = context.Product.Find(item.ProductId);
                 if (dbEntry != null)
                 {
-                    dbEntry.Name = inObj.Name;
-                    dbEntry.Description = inObj.Description;
-                    dbEntry.Price = inObj.Price;
+                    dbEntry.Name = item.Name;
+                    dbEntry.Description = item.Description;
+                    dbEntry.Price = item.Price;
                     //dbEntry.Category = inObj.Category;
-                    dbEntry.ImageData = inObj.ImageData;
-                    dbEntry.ImageMimeType = inObj.ImageMimeType;
+                    dbEntry.ImageData = item.ImageData;
+                    dbEntry.ImageMimeType = item.ImageMimeType;
                 }
             }
             context.SaveChanges();
