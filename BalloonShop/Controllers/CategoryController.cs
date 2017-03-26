@@ -1,5 +1,6 @@
 ﻿using BalloonShop.Domain.Abstract;
 using BalloonShop.Domain.Entities;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,7 +16,8 @@ namespace BalloonShop.Controllers
 
         public ActionResult Index()
         {
-            return View(_repository.list);
+            return View(_repository.list); // => Eagerly Loading
+            //return View(_repository.list.ToList()); // => Lazy Loading
         }
 
         [HttpPost]

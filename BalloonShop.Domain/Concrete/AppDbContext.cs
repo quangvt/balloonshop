@@ -122,6 +122,9 @@ namespace BalloonShop.Domain.Concrete
             //HasMany(p => p.Categories)
             //    .WithRequired()
             //    .HasForeignKey(ph => ph.DepartmentId);
+            HasMany(p => p.Categories)
+                .WithRequired()
+                .HasForeignKey(p => p.DepartmentId);                
         }
     }
 
@@ -129,6 +132,8 @@ namespace BalloonShop.Domain.Concrete
     {
         public CategoryMap()
         {
+            MapToStoredProcedures();
+
             Property(p => p.CategoryId)
                 .IsRequired();
             Property(p => p.Name)
@@ -136,12 +141,19 @@ namespace BalloonShop.Domain.Concrete
                 .HasMaxLength(30);
             Property(p => p.Description)
                 .HasMaxLength(500);
-            //Property(p => p.DepartmentId)
-            //    .IsRequired();
+            Property(p => p.DepartmentId)
+                .IsRequired();
             Property(p => p.DateAdded)
                 .IsRequired();
             //Property(p => p.DepartmentId)
             //    .HasColumnName("DepartmentId");
+            //HasRequired(p => p.Department)
+            //    .WithRequiredDependent(p => p.)
+            //.WithMany(p => p.Categories)
+            //.HasForeignKey(p => p.DepartmentId);
+            HasRequired(p => p.Department)
+                .WithMany(p => p.Categories)
+                .HasForeignKey(p => p.DepartmentId);
 
         }
     }

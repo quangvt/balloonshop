@@ -115,92 +115,24 @@
     <Compile Include="Entities\Member.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
-    <Compile Include="Migrations\201703102039296_InitialCreate.cs" />
-    <Compile Include="Migrations\201703102039296_InitialCreate.Designer.cs">
-      <DependentUpon>201703102039296_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703141725448_InitialMigration.cs" />
-    <Compile Include="Migrations\201703141725448_InitialMigration.Designer.cs">
-      <DependentUpon>201703141725448_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703141742546_UpdateDateAdded.cs" />
-    <Compile Include="Migrations\201703141742546_UpdateDateAdded.Designer.cs">
-      <DependentUpon>201703141742546_UpdateDateAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703141929081_UpdateDeptView.cs" />
-    <Compile Include="Migrations\201703141929081_UpdateDeptView.Designer.cs">
-      <DependentUpon>201703141929081_UpdateDeptView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703141938520_ChangeDeptView2.cs" />
-    <Compile Include="Migrations\201703141938520_ChangeDeptView2.Designer.cs">
-      <DependentUpon>201703141938520_ChangeDeptView2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703141952202_ChangeDeptView3.cs" />
-    <Compile Include="Migrations\201703141952202_ChangeDeptView3.Designer.cs">
-      <DependentUpon>201703141952202_ChangeDeptView3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703150515385_AddSP01.cs" />
-    <Compile Include="Migrations\201703150515385_AddSP01.Designer.cs">
-      <DependentUpon>201703150515385_AddSP01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703150557183_AddComplexProperty.cs" />
-    <Compile Include="Migrations\201703150557183_AddComplexProperty.Designer.cs">
-      <DependentUpon>201703150557183_AddComplexProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703150611433_AddEnum.cs" />
-    <Compile Include="Migrations\201703150611433_AddEnum.Designer.cs">
-      <DependentUpon>201703150611433_AddEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703151030037_AddSPDept.cs" />
-    <Compile Include="Migrations\201703151030037_AddSPDept.Designer.cs">
-      <DependentUpon>201703151030037_AddSPDept.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703151907078_AddProduct.cs" />
-    <Compile Include="Migrations\201703151907078_AddProduct.Designer.cs">
-      <DependentUpon>201703151907078_AddProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703152020339_AddProduct2.cs" />
-    <Compile Include="Migrations\201703152020339_AddProduct2.Designer.cs">
-      <DependentUpon>201703152020339_AddProduct2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703152029226_Switch01.cs" />
-    <Compile Include="Migrations\201703152029226_Switch01.Designer.cs">
-      <DependentUpon>201703152029226_Switch01.cs</DependentUpon>
-    </Compile>
     <Compile Include="Infrastructure\Attributes\FutureDateAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\MustBeTrueAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\NoJoeOnMondaysAttribute.cs" />
-    <Compile Include="Migrations\201703211806076_UseStoreProcedure.cs" />
-    <Compile Include="Migrations\201703211806076_UseStoreProcedure.Designer.cs">
-      <DependentUpon>201703211806076_UseStoreProcedure.cs</DependentUpon>
+    <Compile Include="Migrations\201703261615033_init.cs" />
+    <Compile Include="Migrations\201703261615033_init.Designer.cs">
+      <DependentUpon>201703261615033_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703220754304_AddStoreProcedureMySQL.cs" />
-    <Compile Include="Migrations\201703220754304_AddStoreProcedureMySQL.Designer.cs">
-      <DependentUpon>201703220754304_AddStoreProcedureMySQL.cs</DependentUpon>
+    <Compile Include="Migrations\201703261623357_init2.cs" />
+    <Compile Include="Migrations\201703261623357_init2.Designer.cs">
+      <DependentUpon>201703261623357_init2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703251813204_AddCategory.cs" />
-    <Compile Include="Migrations\201703251813204_AddCategory.Designer.cs">
-      <DependentUpon>201703251813204_AddCategory.cs</DependentUpon>
+    <Compile Include="Migrations\201703261701297_init3.cs" />
+    <Compile Include="Migrations\201703261701297_init3.Designer.cs">
+      <DependentUpon>201703261701297_init3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703251858198_UpdateCategory1.cs" />
-    <Compile Include="Migrations\201703251858198_UpdateCategory1.Designer.cs">
-      <DependentUpon>201703251858198_UpdateCategory1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703251900572_UpdateCategory2.cs" />
-    <Compile Include="Migrations\201703251900572_UpdateCategory2.Designer.cs">
-      <DependentUpon>201703251900572_UpdateCategory2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703251902001_UpdateCategory3.cs" />
-    <Compile Include="Migrations\201703251902001_UpdateCategory3.Designer.cs">
-      <DependentUpon>201703251902001_UpdateCategory3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703251909258_UpdateCategory4.cs" />
-    <Compile Include="Migrations\201703251909258_UpdateCategory4.Designer.cs">
-      <DependentUpon>201703251909258_UpdateCategory4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703251911095_UpdateCategory5.cs" />
-    <Compile Include="Migrations\201703251911095_UpdateCategory5.Designer.cs">
-      <DependentUpon>201703251911095_UpdateCategory5.cs</DependentUpon>
+    <Compile Include="Migrations\201703261728376_init4.cs" />
+    <Compile Include="Migrations\201703261728376_init4.Designer.cs">
+      <DependentUpon>201703261728376_init4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,68 +148,17 @@
     <Content Include="README.TXT" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703102039296_InitialCreate.resx">
-      <DependentUpon>201703102039296_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703261615033_init.resx">
+      <DependentUpon>201703261615033_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703141725448_InitialMigration.resx">
-      <DependentUpon>201703141725448_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703261623357_init2.resx">
+      <DependentUpon>201703261623357_init2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703141742546_UpdateDateAdded.resx">
-      <DependentUpon>201703141742546_UpdateDateAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703261701297_init3.resx">
+      <DependentUpon>201703261701297_init3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703141929081_UpdateDeptView.resx">
-      <DependentUpon>201703141929081_UpdateDeptView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703141938520_ChangeDeptView2.resx">
-      <DependentUpon>201703141938520_ChangeDeptView2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703141952202_ChangeDeptView3.resx">
-      <DependentUpon>201703141952202_ChangeDeptView3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703150515385_AddSP01.resx">
-      <DependentUpon>201703150515385_AddSP01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703150557183_AddComplexProperty.resx">
-      <DependentUpon>201703150557183_AddComplexProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703150611433_AddEnum.resx">
-      <DependentUpon>201703150611433_AddEnum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703151030037_AddSPDept.resx">
-      <DependentUpon>201703151030037_AddSPDept.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703151907078_AddProduct.resx">
-      <DependentUpon>201703151907078_AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703152020339_AddProduct2.resx">
-      <DependentUpon>201703152020339_AddProduct2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703152029226_Switch01.resx">
-      <DependentUpon>201703152029226_Switch01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703211806076_UseStoreProcedure.resx">
-      <DependentUpon>201703211806076_UseStoreProcedure.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703220754304_AddStoreProcedureMySQL.resx">
-      <DependentUpon>201703220754304_AddStoreProcedureMySQL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251813204_AddCategory.resx">
-      <DependentUpon>201703251813204_AddCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251858198_UpdateCategory1.resx">
-      <DependentUpon>201703251858198_UpdateCategory1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251900572_UpdateCategory2.resx">
-      <DependentUpon>201703251900572_UpdateCategory2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251902001_UpdateCategory3.resx">
-      <DependentUpon>201703251902001_UpdateCategory3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251909258_UpdateCategory4.resx">
-      <DependentUpon>201703251909258_UpdateCategory4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251911095_UpdateCategory5.resx">
-      <DependentUpon>201703251911095_UpdateCategory5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703261728376_init4.resx">
+      <DependentUpon>201703261728376_init4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

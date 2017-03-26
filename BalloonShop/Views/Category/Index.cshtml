@@ -26,7 +26,7 @@
                     <tr>
                         <td class="col-sm-1">@item.CategoryId</td>
                         @*Todo: Error if item.Department => Lazy Loading*@
-                        <td class="col-sm-2">@item.DepartmentId</td>
+                        <td class="col-sm-2">@item.Department.Name</td>
                         <td class="col-sm-2">
                             @Html.ActionLink(@item.Name, "Edit", new { @item.CategoryId })
                         </td>
