@@ -25,13 +25,12 @@
                 {
                     <tr>
                         <td class="col-sm-1">@item.CategoryId</td>
-                        @*Todo: Error if item.Department => Lazy Loading*@
                         <td class="col-sm-2">@item.Department.Name</td>
                         <td class="col-sm-2">
                             @Html.ActionLink(@item.Name, "Edit", new { @item.CategoryId })
                         </td>
                         <td class="col-sm-3">@item.Description</td>
-                        <td class="col-sm-2">@item.DateAdded</td>
+                        <td class="col-sm-2">@item.DateAdded.ToShortDateString()</td>
                         <td class="cold-sm-2">
                             @using (Html.BeginForm("Delete", "Category"))
                             {

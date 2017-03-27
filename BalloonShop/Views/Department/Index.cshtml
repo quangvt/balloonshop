@@ -16,18 +16,25 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Categories</th>
                     <th>Description</th>
                     <th></th>
                 </tr>
                 foreach (var dept in Model)
                 {
                     <tr>
-                        <td class="col-sm-2">@dept.DepartmentId</td>
+                        <td class="col-sm-1">@dept.DepartmentId</td>
                         <td class="col-sm-3">
                             @Html.ActionLink(@dept.Name, "Edit", new { @dept.DepartmentId })
                         </td>
-                        <td class="col-sm-5">@dept.Description</td>
-                        <td class="cold-sm-2">
+                        <td class="col-sm-3">
+                            @foreach (BalloonShop.Domain.Entities.Category cat in dept.Categories)
+                            {
+                                @cat.CategoryId <span>&nbsp;</span> @cat.Name; <br/>
+                            }
+                        </td>
+                        <td class="col-sm-4">@dept.Description</td>
+                        <td class="cold-sm-1">
                             @using (Html.BeginForm("Delete", "Department"))
                             {
                                 @Html.Hidden("DepartmentId", @dept.DepartmentId)

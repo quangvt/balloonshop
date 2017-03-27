@@ -1,10 +1,7 @@
 ﻿using BalloonShop.Domain.Abstract;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BalloonShop.Domain.Entities;
+using System.Data.Entity;
 
 namespace BalloonShop.Domain.Concrete
 {
@@ -15,6 +12,7 @@ namespace BalloonShop.Domain.Concrete
         public IEnumerable<Department> list
         {
             get { return context.Department; }
+            //get { return context.Department.Include(t => t.Categories); }
         }
 
         public Department Delete(int id)

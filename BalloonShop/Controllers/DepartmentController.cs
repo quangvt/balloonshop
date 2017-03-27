@@ -4,6 +4,7 @@ using BalloonShop.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace BalloonShop.Controllers
 {
@@ -17,7 +18,24 @@ namespace BalloonShop.Controllers
 
         public ActionResult Index()
         {
-            return View(_repository.list);
+            // Lazy Loading
+            //return View(_repository.list.ToList());
+
+            // Eager Loading    
+            return View(((IQueryable<Department>)(_repository.list)).Include(t => t.Categories));
+
+            // Explicit Loading (You'd use this when Lazy Loading is turned off
+            // Department depts = context.Departments.ToList(); // Note: ToList() must be here
+            // foreach (var dept in depts)
+            // {
+            //     Context.Entry(d).Collection(x => x.Categories).Load(); // Collection
+            //     // Context.Entry(d).Reference(x => x.Administrator).Load(); // Single Element
+            //     foreach (var cat in dept.Categories)
+            //     {
+            //         categoryList.Add(cat.Name);
+            //     }
+            // }
+            // 
         }
 
         [HttpPost]
