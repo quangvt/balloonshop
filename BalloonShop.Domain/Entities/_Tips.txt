@@ -61,6 +61,10 @@ protected override void Seed(BreakAwayContext context)
 	("CREATE INDEX IX_Lodgings_Name ON Lodgings (Name)");
 }
 
+Chapter 7: 
+Advanced
 
+- working with View
+- working with Store Procedure
 
 
