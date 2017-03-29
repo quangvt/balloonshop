@@ -54,7 +54,12 @@ in Lodgings:
 public List<Lodging> PrimaryContactFor { get; set; }
 public List<Lodging> SecondaryContactFor { get; set; }
 
-
+Chapter 6
+protected override void Seed(BreakAwayContext context)
+{
+	context.Database.ExecuteSqlCommand
+	("CREATE INDEX IX_Lodgings_Name ON Lodgings (Name)");
+}
 
 
 
