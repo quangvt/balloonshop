@@ -92,6 +92,9 @@ namespace BalloonShop.Domain.Concrete
             // modelBuilder.ComplexType<Address>();
             //  .Property(p => p.StreetAddress).HasMaxLength(150);
             // => Preferred like: ...Add(new AddressMap());
+
+            // Taking Control of Model Caching
+
         }
     }
 
