@@ -1,6 +1,8 @@
 ﻿using BalloonShop.Domain.Abstract;
 using BalloonShop.Domain.Entities;
+using System.Data.Common;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -14,6 +16,18 @@ namespace BalloonShop.Domain.Concrete
         public AppDbContext() : base("name=balloonshop")
         {
             // TODO: Change DbProvider here?
+        }
+
+        /// <summary>
+        /// Multiple Provider
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="model"></param>
+        public AppDbContext(DbConnection connection, 
+            DbCompiledModel model)
+            : base (connection, model, contextOwnsConnection: false)
+        {
+
         }
         
         /// <summary>
@@ -95,6 +109,8 @@ namespace BalloonShop.Domain.Concrete
 
             // Taking Control of Model Caching
 
+            // Remove EdmMetadata in DB 
+            //modelBuilder.Conventions.Remove<IncludeMetadataConvention>()
         }
     }
 

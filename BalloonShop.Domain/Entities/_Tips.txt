@@ -67,4 +67,10 @@ Advanced
 - working with View
 - working with Store Procedure
 
+Chapter 8:
+What’s Coming Next for Code First
+
+1. Entity Framework Migration
+2. Entity Framework Power Tool
+
 
