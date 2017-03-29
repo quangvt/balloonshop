@@ -88,6 +88,10 @@ namespace BalloonShop.Domain.Concrete
             modelBuilder.Configurations.Add(new MemberMap());
             modelBuilder.Configurations.Add(new AddressMap());
             modelBuilder.Configurations.Add(new ProductMap());
+            // OR. After all Config.Add
+            // modelBuilder.ComplexType<Address>();
+            //  .Property(p => p.StreetAddress).HasMaxLength(150);
+            // => Preferred like: ...Add(new AddressMap());
         }
     }
 
@@ -124,7 +128,13 @@ namespace BalloonShop.Domain.Concrete
             //    .HasForeignKey(ph => ph.DepartmentId);
             HasMany(p => p.Categories)
                 .WithRequired()
-                .HasForeignKey(p => p.DepartmentId);                
+                .HasForeignKey(p => p.DepartmentId);
+            Property(p => p.RowVersion)
+                .IsRowVersion();
+            // For Database has no Row Version Type or Manual Check
+            //Entity<T>.Property(t => t.PropertyName).IsConcurrencyToken()  
+
+            //Entity.Has[Multiplicity](Property).With[Multiplicity](Property)
         }
     }
 

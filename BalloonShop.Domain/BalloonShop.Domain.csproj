@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entities\_MigrationDoc.txt" />
+    <Content Include="Entities\_Tips.txt" />
     <Content Include="Entities\_TypeMapping.txt" />
     <Content Include="README.TXT" />
   </ItemGroup>

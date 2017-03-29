@@ -1,0 +1,61 @@
+﻿1. Configuration - Entity 
+- There is no Data Annotation for mapping Unicode
+  Programming Entity Framework: Code First (PEF:CF). P.51
+- Precision and Scale cannot be configured with Data Annotations
+  PEF.CF P.52
+2. Complex Type with Code First
+- 1. Complex types have no key property.
+- 2. Complex types can only contain primitive properties.
+- 3. When used as a property in another class, the property must represent a single
+instance. It cannot be a collection type
+* Add in FluentAPI: after all modelBuilder.Config....Add();
+
+3. Complicated Complex Type
+
+public class PersonalInfo
+{
+  public Measurement Weight { get; set; }
+  public Measurement Height { get; set; }
+  public string DietryRestrictions { get; set; }
+}
+
+public class Measurement
+{
+  public decimal Reading { get; set; }
+  public string Units { get; set; }
+}
+
+in Person class:
+public Person()
+{
+  Address = new Address();
+  Info = new PersonalInfo
+  {
+    Weight = new Measurement(),
+    Height = new Measurement()
+  };
+}
+public PersonalInfo Info { get; set; }
+...
+
+[ComplexType]
+or
+modelBinder.ComplexType<PersonalInfo>();
+
+4. Using Convention and Configuration for Relationship
+
+modelBuilder.Entity<InternetSpecial>()
+.HasRequired(s => s.Accommodation)
+.WithMany(l => l.InternetSpecials)
+.HasForeignKey(s => s.AccommodationId);
+
+* Working with Inverse Navigation Properties
+in Lodgings:
+public List<Lodging> PrimaryContactFor { get; set; }
+public List<Lodging> SecondaryContactFor { get; set; }
+
+
+
+
+
+
