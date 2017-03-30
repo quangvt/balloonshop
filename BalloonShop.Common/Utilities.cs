@@ -10,7 +10,7 @@ namespace BalloonShop.Common
 
         static Utilities()
         {
-
+            // CONSTRUCTOR
         }
 
         // Generic method for sending emails
