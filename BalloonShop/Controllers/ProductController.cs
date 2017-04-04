@@ -108,7 +108,7 @@ namespace BalloonShop.Controllers
         }
 
         public FileContentResult GetImage(int productId)
-        {
+        {   
             Product obj = _repository.list
                 .FirstOrDefault(p => p.ProductId == productId);
             if (obj != null)
@@ -123,6 +123,7 @@ namespace BalloonShop.Controllers
 
         /// <summary>
         /// Remote validation: Sample
+        /// Validate by Server but via Json (Ajax)
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>

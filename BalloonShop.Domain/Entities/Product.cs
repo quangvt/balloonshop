@@ -8,12 +8,14 @@ namespace BalloonShop.Domain.Entities
     public class Product
     // public class Product : IValidatableObject
     {
+        // TODO: Change all attributes to mapping files
         [HiddenInput(DisplayValue = false)]
         public int ProductId { get; set; }
 
         // Remote validate: execute in the first time submit
         //  and each time user edit later. So need to consider
         //  to apply this validation type
+        // TODO: How to change Mapping File
         [Remote("ValidateName", "Product")]
         public string Name { get; set; }
 
@@ -23,6 +25,7 @@ namespace BalloonShop.Domain.Entities
         [Range(0.01, double.MaxValue)]
         public decimal Price { get; set; }
 
+        //[Required] => diff from Mapping file
         public string Category { get; set; }
 
         public byte[] ImageData { get; set; }

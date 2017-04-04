@@ -4,6 +4,7 @@ namespace BalloonShop.Domain.Entities
 { 
     public class ShippingDetails
     {
+        // TODO: Change all annotation to mapping files
         [Required(ErrorMessage = "Please enter a name")]
         public string Name { get; set; }
 

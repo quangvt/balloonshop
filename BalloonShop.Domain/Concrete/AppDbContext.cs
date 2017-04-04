@@ -219,6 +219,7 @@ namespace BalloonShop.Domain.Concrete
         {
             // Apply DML by Store Procedure
             MapToStoredProcedures();
+            /** References: Specific Name for SP
             //MapToStoredProcedures(config =>
             //{
             //    config.Delete(
@@ -233,9 +234,8 @@ namespace BalloonShop.Domain.Concrete
             //    config.Update(procConfig =>
             //        procConfig.HasName("CompanyUpdate"));
             //});
-        
-
-                Property(p => p.Name)
+            */
+            Property(p => p.Name)
                 .IsRequired();
             Property(p => p.Description)
                 .IsRequired();
