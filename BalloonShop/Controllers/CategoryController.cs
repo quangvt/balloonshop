@@ -8,8 +8,10 @@ namespace BalloonShop.Controllers
 {
     public class CategoryController : Controller
     {
-        private IRepository<Category> _repository;
-        public CategoryController(IRepository<Category> repo)
+        //private IRepository<Category> _repository;
+        private ICategoryRepository _repository;
+        //public CategoryController(IRepository<Category> repo)
+        public CategoryController(ICategoryRepository repo)
         {
             _repository = repo;
         }
@@ -34,6 +36,7 @@ namespace BalloonShop.Controllers
 
         public ActionResult Create()
         {
+            PopulateDepartmentsDropDownList();
             return View("Edit", new Category());
         }
 
@@ -60,6 +63,11 @@ namespace BalloonShop.Controllers
             }
         }
 
+        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+        {
+            var depts = _repository.GetDepartments();
+            ViewBag.DepartmentId = new SelectList(depts, "DepartmentId", "Name", selectedDepartment); 
+        }
         
     }
 }

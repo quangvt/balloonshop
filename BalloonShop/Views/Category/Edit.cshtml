@@ -16,11 +16,23 @@
                 switch (property.PropertyName)
                 {
                     case "CategoryId":
+                        // do nothing
+                        break;
                     case "Department":
-                        // do not display
+                        break;
+                    case "DepartmentId":
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @Html.DropDownList("DepartmentId", null, htmlAttributes: new { @class = "form-control" })
+                            @*"DepartmentId" => not strong type => get ViewBag.DepartmentId*@
+                        </div>
                         break;
                     case "DateAdded":
-                        // ???
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control" } })
+                            @*"DepartmentId" => not strong type => get ViewBag.DepartmentId*@
+                        </div>
                         break;
                     default:
                         <div class="form-group">

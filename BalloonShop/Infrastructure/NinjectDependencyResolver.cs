@@ -53,7 +53,8 @@ namespace BalloonShop.Infrastructure
             //_kernel.Bind<IDepartmentRepository>().To<EFDepartmentRepository>();
             //_kernel.Bind<IProductRepository>().To<EFProductRepository>();
             _kernel.Bind<IRepository<Department>>().To<EFDepartmentRepository>();
-            _kernel.Bind<IRepository<Category>>().To<EFCategoryRepository>();
+            //_kernel.Bind<IRepository<Category>>().To<EFCategoryRepository>();
+            _kernel.Bind<ICategoryRepository>().To<EFCategoryRepository>();
             _kernel.Bind<IRepository<Product>>().To<EFProductRepository>();
 
             //_kernel.Bind<IProductRepository>().To<EFProductSPRepository>();

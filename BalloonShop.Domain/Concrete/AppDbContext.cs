@@ -174,6 +174,9 @@ namespace BalloonShop.Domain.Concrete
                 .IsRequired();
             Property(p => p.DateAdded)
                 .IsRequired();
+        //            [DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[Display(Name = "Enrollment Date")]
             //Property(p => p.DepartmentId)
             //    .HasColumnName("DepartmentId");
             //HasRequired(p => p.Department)
