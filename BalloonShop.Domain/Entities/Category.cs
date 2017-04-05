@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BalloonShop.Domain.Entities
@@ -16,5 +17,7 @@ namespace BalloonShop.Domain.Entities
 
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

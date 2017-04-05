@@ -1,10 +1,12 @@
 ﻿using BalloonShop.Domain.Abstract;
 using System.Collections.Generic;
 using BalloonShop.Domain.Entities;
+using System.Linq;
 
 namespace BalloonShop.Domain.Concrete
 {
-    public class EFProductRepository : IRepository<Product>
+    //public class EFProductRepository : IRepository<Product>
+    public class EFProductRepository : IProductRepository
     {
         AppDbContext context = new AppDbContext();
 
@@ -44,6 +46,14 @@ namespace BalloonShop.Domain.Concrete
                 }
             }
             context.SaveChanges();
+        }
+
+        public IEnumerable<Category> GetCategories()
+        {
+            var query = from c in context.Category
+                        orderby c.Name
+                        select c;
+            return query;
         }
     }
 }

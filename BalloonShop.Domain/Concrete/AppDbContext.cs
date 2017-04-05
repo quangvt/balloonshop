@@ -244,8 +244,11 @@ namespace BalloonShop.Domain.Concrete
                 .IsRequired();
             Property(p => p.Price)
                 .IsRequired();
-            Property(p => p.Category)
+            Property(p => p.CategoryId)
                 .IsRequired();
+            HasRequired(p => p.Category)
+                .WithMany(p => p.Products)
+                .HasForeignKey(p => p.CategoryId);
 
         }
     }

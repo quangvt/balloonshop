@@ -1,6 +1,7 @@
 ﻿using BalloonShop.Domain.Abstract;
 using System.Collections.Generic;
 using BalloonShop.Domain.Entities;
+using System.Linq;
 
 namespace BalloonShop.Domain.Concrete
 {
@@ -34,6 +35,14 @@ namespace BalloonShop.Domain.Concrete
         public void Save(Product item)
         {
             // ...
+        }
+
+        public IEnumerable<Category> GetCategories()
+        {
+            var query = from c in context.Category
+                        orderby c.Name
+                        select c;
+            return query;
         }
     }
 }

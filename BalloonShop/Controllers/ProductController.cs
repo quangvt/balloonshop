@@ -9,9 +9,11 @@ namespace BalloonShop.Controllers
 {
     public class ProductController : Controller
     {
-        private IRepository<Product> _repository;
+        //private IRepository<Product> _repository;
+        private IProductRepository _repository;
         public int PageSize = 4;
-        public ProductController(IRepository<Product> repo)
+        //public ProductController(IRepository<Product> repo)
+        public ProductController(IProductRepository repo)
         {
             _repository = repo;
         }
@@ -22,7 +24,7 @@ namespace BalloonShop.Controllers
             {
                 Products = _repository.list
                     .Where(p => category == null ||
-                        p.Category == category)
+                        p.Category.ToString() == category)
                     .OrderBy(p => p.ProductId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
@@ -31,7 +33,7 @@ namespace BalloonShop.Controllers
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalItems = (category == null) ? _repository.list.Count()
-                                    : _repository.list.Where(e => e.Category == category).Count()
+                                    : _repository.list.Where(e => e.Category.ToString() == category).Count()
                 },
                 CurrentCategory = category
             };
@@ -47,6 +49,7 @@ namespace BalloonShop.Controllers
 
         public ActionResult Create()
         {
+            PopulateCategoriesDropDownList();
             return View("Edit", new Product());
         }
 
@@ -139,6 +142,12 @@ namespace BalloonShop.Controllers
             {
                 return Json(true, JsonRequestBehavior.AllowGet);
             }
+        }
+        
+        private void PopulateCategoriesDropDownList(object selectedCategory = null)
+        {
+            var cats = _repository.GetCategories();
+            ViewBag.CategoryId = new SelectList(cats, "CategoryId", "Name", selectedCategory);
         }
     }
 }

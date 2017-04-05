@@ -8,13 +8,15 @@ namespace BalloonShop.Controllers
 {
     public class CartController : Controller
     {
-        private IRepository<Product> repository;
-        private IOrderProcessor orderProcessor;
+        //private IRepository<Product> repository;
+        private IProductRepository _repository;
+        private IOrderProcessor _orderProcessor;
 
-        public CartController(IRepository<Product> repo, IOrderProcessor proc)
+        //public CartController(IRepository<Product> repo, IOrderProcessor proc)
+        public CartController(IProductRepository repo, IOrderProcessor proc)
         {
-            repository = repo;
-            orderProcessor = proc;
+            _repository = repo;
+            _orderProcessor = proc;
         }
 
         public ViewResult Index(Cart cart, string returnUrl)
@@ -28,7 +30,7 @@ namespace BalloonShop.Controllers
 
         public RedirectToRouteResult AddToCart(Cart cart, int productId, string returnUrl)
         {
-            Product product = repository.list
+            Product product = _repository.list
                 .FirstOrDefault(p => p.ProductId == productId);
             if(product != null)
             {
@@ -39,7 +41,7 @@ namespace BalloonShop.Controllers
 
         public RedirectToRouteResult RemoveFromCart (Cart cart, int productId, string returnUrl)
         {
-            Product product = repository.list
+            Product product = _repository.list
                 .FirstOrDefault(p => p.ProductId == productId);
             if(product != null)
             {
@@ -68,7 +70,7 @@ namespace BalloonShop.Controllers
 
             if (ModelState.IsValid)
             {
-                orderProcessor.ProcessOrder(cart, shippingDetails);
+                _orderProcessor.ProcessOrder(cart, shippingDetails);
                 cart.Clear();
                 return View("Completed");
             }

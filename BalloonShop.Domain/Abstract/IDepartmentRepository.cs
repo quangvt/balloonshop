@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace BalloonShop.Domain.Abstract
 {
-    public interface IDepartmentRepository
+    public interface IDepartmentRepository : IRepository<Department>
     {
-        IEnumerable<Department> list { get; }
-        void Save(Department item);
-        Department Delete(int id);
+        //IEnumerable<Department> list { get; }
+        //void Save(Department item);
+        //Department Delete(int id);
     }
 }

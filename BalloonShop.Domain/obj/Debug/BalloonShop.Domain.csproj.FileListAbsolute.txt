@@ -23,3 +23,5 @@ C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\System.Web.WebPages.Razor.xm
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.csprojResolveAssemblyReference.cache
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.dll
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.pdb
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.AddCategoryToProduct.resources
+C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.csproj.GenerateResource.Cache

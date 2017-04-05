@@ -5,7 +5,8 @@ using System.Data.Entity;
 
 namespace BalloonShop.Domain.Concrete
 {
-    public class EFDepartmentRepository : IRepository<Department>
+    //public class EFDepartmentRepository : IRepository<Department>
+    public class EFDepartmentRepository : IDepartmentRepository
     {
         AppDbContext context = new AppDbContext();
 

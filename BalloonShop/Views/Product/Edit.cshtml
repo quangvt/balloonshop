@@ -25,9 +25,17 @@
                 switch (property.PropertyName)
                 {
                     case "ProductId":
+                    case "Category":
                     case "ImageData":
                     case "ImageMimeType":
                         // do not display
+                        break;
+                    case "CategoryId":
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                            @*"CategoryId" => not strong type => get ViewBag.CategoryId*@
+                        </div>
                         break;
                     default:
                         <div class="form-group">

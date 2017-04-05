@@ -10,8 +10,10 @@ namespace BalloonShop.Controllers
 {
     public class DepartmentController : Controller
     {
-        private IRepository<Department> _repository;
-        public DepartmentController(IRepository<Department> repo)
+        //private IRepository<Department> _repository;
+        private IDepartmentRepository _repository;
+        //public DepartmentController(IRepository<Department> repo)
+        public DepartmentController(IDepartmentRepository repo)
         {
             _repository = repo;
         }

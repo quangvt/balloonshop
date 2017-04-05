@@ -10,9 +10,11 @@ namespace BalloonShop.Controllers
 {
     public class NavController : Controller
     {
-        private IRepository<Product> _repository;
+        //private IRepository<Product> _repository;
+        private IProductRepository _repository;
 
-        public NavController(IRepository<Product> repo)
+        //public NavController(IRepository<Product> repo)
+        public NavController(IProductRepository repo)
         {
             _repository = repo;
         }
@@ -21,7 +23,7 @@ namespace BalloonShop.Controllers
         {
             ViewBag.SelectedCategory = category;
             IEnumerable<string> categories =
-                _repository.list.Select(x => x.Category)
+                _repository.list.Select(x => x.Category.ToString())
                     .Distinct()
                     .OrderBy(x => x);
             return PartialView("FlexMenu", categories); 
