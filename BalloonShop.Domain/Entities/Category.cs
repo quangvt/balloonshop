@@ -12,7 +12,7 @@ namespace BalloonShop.Domain.Entities
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Added Date")]
+        [Display(Name = "DateAdded")]
         public DateTime DateAdded { get; set; }
 
         public int DepartmentId { get; set; }
