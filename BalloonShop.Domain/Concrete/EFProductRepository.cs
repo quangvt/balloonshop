@@ -40,7 +40,7 @@ namespace BalloonShop.Domain.Concrete
                     dbEntry.Name = item.Name;
                     dbEntry.Description = item.Description;
                     dbEntry.Price = item.Price;
-                    //dbEntry.Category = inObj.Category;
+                    dbEntry.CategoryId = item.CategoryId;
                     dbEntry.ImageData = item.ImageData;
                     dbEntry.ImageMimeType = item.ImageMimeType;
                 }

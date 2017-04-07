@@ -23,10 +23,10 @@ namespace BalloonShop.Controllers
         {
             ViewBag.SelectedCategory = category;
             IEnumerable<string> categories =
-                _repository.list.Select(x => x.Category.ToString())
+                _repository.list.ToList().Select(x => x.Category.Name)
                     .Distinct()
                     .OrderBy(x => x);
-            return PartialView("FlexMenu", categories); 
+            return PartialView("FlexMenu", categories);
         }
     }
 }
