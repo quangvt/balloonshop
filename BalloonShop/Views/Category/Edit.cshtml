@@ -31,10 +31,10 @@
                             <label>@(property.DisplayName ?? property.PropertyName)</label>
                             @*TODO: Can not default: NOW or MM/DD/YYYY*@
                             @Html.EditorFor(model => model.DateAdded ,
-                                    new { htmlAttributes = new { @class = "form-control", @value = "2017-01-01", abc="def" } }
+                                    new { htmlAttributes = new { @class = "form-control" } }
 
                                 )
-                            <label>HOHO</label>
+                            
                             @*"DepartmentId" => not strong type => get ViewBag.DepartmentId*@
                         </div>
                         break;
