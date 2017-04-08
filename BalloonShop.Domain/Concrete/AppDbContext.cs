@@ -172,8 +172,9 @@ namespace BalloonShop.Domain.Concrete
                 .HasMaxLength(500);
             Property(p => p.DepartmentId)
                 .IsRequired();
-            Property(p => p.DateAdded)
-                .IsRequired();
+            
+            //Property(p => p.DateAdded)
+            //    .IsRequired();
         //            [DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         //[Display(Name = "Enrollment Date")]

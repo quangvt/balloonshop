@@ -14,9 +14,13 @@ C:\Working\BalloonShop\BalloonShop\bin\roslyn\VBCSCompiler.exe.config
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.dll.config
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.dll
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.pdb
+C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.dll
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Domain.dll
 C:\Working\BalloonShop\BalloonShop\bin\EntityFramework.dll
 C:\Working\BalloonShop\BalloonShop\bin\EntityFramework.SqlServer.dll
+C:\Working\BalloonShop\BalloonShop\bin\Glimpse.AspNet.dll
+C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Core.dll
+C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Mvc5.dll
 C:\Working\BalloonShop\BalloonShop\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Working\BalloonShop\BalloonShop\bin\Microsoft.AI.DependencyCollector.dll
 C:\Working\BalloonShop\BalloonShop\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -38,6 +42,7 @@ C:\Working\BalloonShop\BalloonShop\bin\System.Web.Webpages.Deployment.dll
 C:\Working\BalloonShop\BalloonShop\bin\System.Web.Webpages.dll
 C:\Working\BalloonShop\BalloonShop\bin\System.Web.Webpages.Razor.dll
 C:\Working\BalloonShop\BalloonShop\bin\WebActivatorEx.dll
+C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.pdb
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Domain.pdb
 C:\Working\BalloonShop\BalloonShop\bin\EntityFramework.xml
 C:\Working\BalloonShop\BalloonShop\bin\EntityFramework.SqlServer.xml
@@ -59,8 +64,3 @@ C:\Working\BalloonShop\BalloonShop\bin\System.Web.Mvc.xml
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.csprojResolveAssemblyReference.cache
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.dll
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.pdb
-C:\Working\BalloonShop\BalloonShop\bin\Glimpse.AspNet.dll
-C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Core.dll
-C:\Working\BalloonShop\BalloonShop\bin\Glimpse.Mvc5.dll
-C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.dll
-C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.pdb

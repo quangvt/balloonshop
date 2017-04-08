@@ -1,5 +1,4 @@
 C:\Working\BalloonShop\CommonModules\bin\Debug\CommonModules.dll
 C:\Working\BalloonShop\CommonModules\bin\Debug\CommonModules.pdb
-C:\Working\BalloonShop\CommonModules\obj\Debug\CommonModules.csprojResolveAssemblyReference.cache
 C:\Working\BalloonShop\CommonModules\obj\Debug\CommonModules.dll
 C:\Working\BalloonShop\CommonModules\obj\Debug\CommonModules.pdb

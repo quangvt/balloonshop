@@ -78,6 +78,11 @@ input[type="checkbox"].input-validation-error {
 .field-validation-error {
   color: #f00;
 }
+input,
+select,
+textarea {
+  max-width: 280px;
+}
 /*
 // compile to
 a {
