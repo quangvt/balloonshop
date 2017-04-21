@@ -11,7 +11,7 @@ namespace BalloonShop.Domain.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "BalloonShop.Domain.Concrete.AppDbContext";
 
             // Dedicate for MySQL Database

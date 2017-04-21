@@ -5,12 +5,13 @@
 5. Add migrations to an existing database
 
 --------------------------------------------------------------------------------
-2. Automation Migration
+2. Automation Migration (need apply for new database)
 
-Get-Help Enable-Migrations
+npm> Get-Help Enable-Migrations
+example: npm> Enable-Migrations -projectname balloonshop.domain -AutomaticMigrationsEnable
 
-Update-Database -script -force (Show script)
-Update-Database -force (not show script)
+Update-Database -script -force (Show script) [Not yet run]
+Update-Database -force (not show script) [run][add -verbose to display]
 // if you need specify project do as below
 Update-Database -projectname MyProjectName -force
 

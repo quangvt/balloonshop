@@ -20,9 +20,6 @@ C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\System.Web.Razor.xml
 C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\System.Web.WebPages.xml
 C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Working\BalloonShop\BalloonShop.Domain\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.AddCategoryToProduct.resources
-C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.csproj.GenerateResource.Cache
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.dll
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.pdb
-C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.Migrations.datenonreq.resources
 C:\Working\BalloonShop\BalloonShop.Domain\obj\Debug\BalloonShop.Domain.csprojResolveAssemblyReference.cache

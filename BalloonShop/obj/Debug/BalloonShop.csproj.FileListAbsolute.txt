@@ -64,3 +64,4 @@ C:\Working\BalloonShop\BalloonShop\bin\System.Web.Mvc.xml
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.csprojResolveAssemblyReference.cache
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.dll
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.pdb
+C:\Working\balloonshop\BalloonShop\bin\BalloonShop.Domain.dll.config
