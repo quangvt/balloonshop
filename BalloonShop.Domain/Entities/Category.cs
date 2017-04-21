@@ -15,6 +15,8 @@ namespace BalloonShop.Domain.Entities
         [Display(Name = "DateAdded")]
         public DateTime DateAdded { get; set; }
 
+        // Test Commit SSH via VS2017
+
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
 
