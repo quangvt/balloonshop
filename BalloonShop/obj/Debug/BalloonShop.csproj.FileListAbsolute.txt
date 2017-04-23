@@ -11,7 +11,6 @@ C:\Working\BalloonShop\BalloonShop\bin\roslyn\System.Reflection.Metadata.dll
 C:\Working\BalloonShop\BalloonShop\bin\roslyn\vbc.exe
 C:\Working\BalloonShop\BalloonShop\bin\roslyn\VBCSCompiler.exe
 C:\Working\BalloonShop\BalloonShop\bin\roslyn\VBCSCompiler.exe.config
-C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.dll.config
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.dll
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.pdb
 C:\Working\BalloonShop\BalloonShop\bin\BalloonShop.Common.dll
@@ -65,3 +64,4 @@ C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.csprojResolveAssemblyRe
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.dll
 C:\Working\BalloonShop\BalloonShop\obj\Debug\BalloonShop.pdb
 C:\Working\balloonshop\BalloonShop\bin\BalloonShop.Domain.dll.config
+C:\Working\balloonshop\BalloonShop\bin\BalloonShop.dll.config
