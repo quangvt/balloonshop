@@ -21,6 +21,12 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+BalloonShop/[Bb]in/
+BalloonShop/[Oo]bj/
+BalloonShop.Domain/[Bb]in/
+BalloonShop.Domain/[Oo]bj/
+BalloonShop.Common/[Bb]in/
+BalloonShop.Common/[Oo]bj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
