@@ -1,4 +1,0 @@
-C:\Working\BalloonShop\BalloonShop.Common\bin\Debug\BalloonShop.Common.dll
-C:\Working\BalloonShop\BalloonShop.Common\bin\Debug\BalloonShop.Common.pdb
-C:\Working\BalloonShop\BalloonShop.Common\obj\Debug\BalloonShop.Common.dll
-C:\Working\BalloonShop\BalloonShop.Common\obj\Debug\BalloonShop.Common.pdb
