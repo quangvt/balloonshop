@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonShop", "BalloonShop\BalloonShop.csproj", "{2BC26FB6-DF9C-40F6-9313-8F5E64350FA8}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModules", "CommonModules\CommonModules.csproj", "{69F30F58-ECA3-4E13-A367-309F95BFB231}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonShop.Common", "BalloonShop.Common\BalloonShop.Common.csproj", "{BFC7A395-D8DC-400F-A267-86EF69F17490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonShop.Test", "BalloonShop.Test\BalloonShop.Test.csproj", "{FEA9E1DC-92B3-4998-9B4A-BFF730EFE23D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC7A395-D8DC-400F-A267-86EF69F17490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA9E1DC-92B3-4998-9B4A-BFF730EFE23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA9E1DC-92B3-4998-9B4A-BFF730EFE23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA9E1DC-92B3-4998-9B4A-BFF730EFE23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA9E1DC-92B3-4998-9B4A-BFF730EFE23D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

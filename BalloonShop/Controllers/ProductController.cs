@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace BalloonShop.Controllers
 {
+    //[RoutePrefix("Product")]
     public class ProductController : Controller
     {
         //private IRepository<Product> _repository;
@@ -18,6 +19,7 @@ namespace BalloonShop.Controllers
             _repository = repo;
         }
 
+        //[Route("~/Test")] // ~/ => don't apply RoutePrefix
         public ViewResult List(string category, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
@@ -47,6 +49,8 @@ namespace BalloonShop.Controllers
             return View(_repository.list);
         }
 
+        //[Route("Add/{product}/{id:int}")]
+        //[Route("Add/{product}/{name:alpha:length(6)}")]
         public ActionResult Create()
         {
             PopulateCategoriesDropDownList();

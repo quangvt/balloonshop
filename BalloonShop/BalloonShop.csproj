@@ -221,6 +221,7 @@
     <Compile Include="Infrastructure\Abstract\IRequiresDate.cs" />
     <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
+    <Compile Include="Infrastructure\Contraint\UserAgentConstraint.cs" />
     <Compile Include="Infrastructure\Handler\CounterHandler.cs" />
     <Compile Include="Infrastructure\Handler\CounterHandlerFactory.cs" />
     <Compile Include="Infrastructure\Handler\DayOfWeekHandler.cs" />
